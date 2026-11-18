@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11121b">
+  <meta name="description" content="ClipAI — transforme vídeos longos em cortes prontos para compartilhar.">
+  <title>ClipAI — Estúdio de cortes inteligentes</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Menu principal">
+      <a class="brand" href="#inicio" aria-label="ClipAI, início" data-view-link="dashboard">
+        <img src="assets/logo.svg" alt="" width="38" height="38">
+        <span>clip<span class="brand-accent">ai</span><small>STUDIO</small></span>
+      </a>
+
+      <div class="workspace-switcher">
+        <div class="workspace-avatar">C</div>
+        <div class="workspace-copy"><strong>Meu espaço</strong><span>Plano gratuito</span></div>
+        <span class="chevron" aria-hidden="true">⌄</span>
+      </div>
+
+      <p class="nav-label">ESPAÇO DE TRABALHO</p>
+      <nav class="main-nav">
+        <button class="nav-item active" type="button" data-view="dashboard"><span class="nav-icon">▦</span> Visão geral</button>
+        <button class="nav-item" type="button" data-view="new-project"><span class="nav-icon">＋</span> Novo projeto</button>
+        <button class="nav-item" type="button" data-view="library"><span class="nav-icon">▤</span> Meus cortes <span class="nav-count" id="nav-clip-count">04</span></button>
+      </nav>
+
+      <p class="nav-label nav-label-spaced">PREFERÊNCIAS</p>
+      <nav class="main-nav">
+        <button class="nav-item" type="button" data-view="contact"><span class="nav-icon">✉</span> Contato</button>
+        <button class="nav-item" type="button" id="open-accessibility"><span class="nav-icon">◉</span> Acessibilidade</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <div class="help-spark">✳</div>
+          <strong>Precisa de ajuda?</strong>
+          <p>Veja como transformar uma gravação em vários conteúdos.</p>
+          <button type="button" class="text-link" data-view="contact">Fale com a gente <span>↗</span></button>
+        </div>
+        <div class="profile-row">
+          <div class="profile-avatar">NF</div>
+          <div class="profile-info"><strong>Nicolas Fernandes</strong><span>Conta demonstrativa</span></div>
+          <a href="login.html" class="profile-menu" aria-label="Abrir página de login">↗</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="mobile-menu" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><span class="breadcrumb-slash">/</span><strong id="breadcrumb-current">Visão geral</strong></div>
+        <div class="topbar-actions">
+          <label class="global-search"><span aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="Buscar projetos e cortes..." aria-label="Buscar projetos e cortes"><kbd>⌘ K</kbd></label>
+          <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Ativar modo claro" title="Alternar tema">☼</button>
+          <button class="notification-button icon-button" type="button" aria-label="Notificações"><span>♧</span><i></i></button>
+          <a href="login.html" class="top-avatar" aria-label="Acessar login">NF</a>
+        </div>
+      </header>
+
+      <main id="main-content" class="page-content">
+        <!-- DASHBOARD -->
+        <section class="view active" id="view-dashboard" aria-labelledby="dashboard-title">
+          <div class="welcome-row">
+            <div>
+              <div class="eyebrow"><span class="live-dot"></span> SEU ESTÚDIO CRIATIVO</div>
+              <h1 id="dashboard-title">Bom dia, Nicolas <span class="wave">✦</span></h1>
+              <p class="page-subtitle">Pronto para transformar boas ideias em cortes incríveis?</p>
+            </div>
+            <button class="button button-primary" type="button" data-view="new-project"><span>＋</span> Criar novo projeto</button>
+          </div>
+
+          <div class="hero-banner">
+            <div class="hero-content">
+              <div class="hero-pill"><span>✦</span> EDIÇÃO MAIS INTELIGENTE</div>
+              <h2>Seu melhor conteúdo<br>merece <em>mais alcance.</em></h2>
+              <p>Encontre os momentos que importam. Transforme horas de vídeo em cortes que prendem a atenção.</p>
+              <button class="button button-light" type="button" data-view="new-project">Começar agora <span>↗</span></button>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+              <div class="video-window"><div class="video-window-top"><i></i><i></i><i></i><span>clipai_studio.mp4</span></div><div class="video-window-scene"><div class="scene-sun"></div><div class="scene-mountain mountain-back"></div><div class="scene-mountain mountain-front"></div><div class="scene-play">▶</div></div><div class="waveform"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div></div>
+              <div class="floating-tag tag-ai">✦ IA em ação</div><div class="floating-tag tag-time">◷ 00:42</div><div class="floating-tag tag-caption">Aa Legendas</div>
+            </div>
+            <div class="hero-glow"></div>
+          </div>
+
+          <div class="section-heading stats-heading"><div><h2>Seu espaço em números</h2><p>Acompanhe a evolução dos seus projetos.</p></div><span class="date-chip">◷ Últimos 30 dias</span></div>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon purple">▣</span><span class="stat-trend">↗ 12,5%</span></div><strong class="stat-value" id="stat-projects">08</strong><span class="stat-label">Projetos criados</span><div class="stat-foot"><span class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span> <span>em relação ao mês passado</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon mint">▶</span><span class="stat-trend">↗ 8,2%</span></div><strong class="stat-value" id="stat-clips">24</strong><span class="stat-label">Cortes gerados</span><div class="stat-foot"><span class="mini-bars mint-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span> <span>em relação ao mês passado</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon orange">◷</span><span class="stat-trend neutral">Tempo economizado</span></div><strong class="stat-value">6h 20m</strong><span class="stat-label">De edição manual</span><div class="stat-foot"><span class="stat-foot-note">Mais tempo para criar ✨</span></div></article>
+          </div>
+
+          <div class="section-heading"><div><h2>Projetos recentes</h2><p>Continue de onde você parou.</p></div><button class="text-link" data-view="library" type="button">Ver todos <span>→</span></button></div>
+          <div class="project-grid" id="recent-projects">
+            <article class="project-card searchable-card" data-search="podcast ideias que conectam entrevista"><div class="project-thumb thumb-podcast"><span class="thumb-label">PODCAST</span><span class="thumb-play">▶</span><div class="thumb-title">IDEIAS QUE<br>CONECTAM</div><span class="thumb-duration">48:32</span></div><div class="project-card-body"><div class="project-card-title"><div><h3>Podcast — Ideias que Conectam</h3><p>Atualizado há 2 horas</p></div><button class="more-button" aria-label="Mais opções" type="button">···</button></div><div class="project-meta"><span>◧ 6 cortes</span><span class="status status-done"><i></i> Concluído</span></div></div></article>
+            <article class="project-card searchable-card" data-search="aula criatividade design online"><div class="project-thumb thumb-class"><span class="thumb-label">AULA ONLINE</span><span class="thumb-play">▶</span><div class="thumb-title">CRIATIVIDADE<br>SEM LIMITES</div><span class="thumb-duration">1:12:08</span></div><div class="project-card-body"><div class="project-card-title"><div><h3>Aula — Criatividade sem limites</h3><p>Ontem, às 16:40</p></div><button class="more-button" aria-label="Mais opções" type="button">···</button></div><div class="project-meta"><span>◧ 8 cortes</span><span class="status status-done"><i></i> Concluído</span></div></div></article>
+            <article class="project-card searchable-card" data-search="live tecnologia futuro transmissão"><div class="project-thumb thumb-live"><span class="thumb-label">AO VIVO</span><span class="thumb-play">▶</span><div class="thumb-title">O FUTURO É<br>AGORA</div><span class="thumb-duration">2:04:51</span></div><div class="project-card-body"><div class="project-card-title"><div><h3>Live — O futuro é agora</h3><p>18 nov. 2026</p></div><button class="more-button" aria-label="Mais opções" type="button">···</button></div><div class="project-meta"><span>◧ 10 cortes</span><span class="status status-processing"><i></i> Em análise</span></div></div></article>
+          </div>
+
+          <div class="bottom-grid">
+            <section class="tips-panel"><div class="section-heading compact"><div><h2>Inspire-se para criar</h2><p>Pequenas ideias, grandes possibilidades.</p></div><div class="carousel-controls"><button class="icon-button carousel-prev" aria-label="Dica anterior" type="button">←</button><button class="icon-button carousel-next" aria-label="Próxima dica" type="button">→</button></div></div><div class="tip-carousel" id="tip-carousel"><article class="tip-card tip-one"><div class="tip-illustration">✦</div><div><span class="tip-kicker">DICA DE CONTEÚDO · 01</span><h3>Comece pelo gancho</h3><p>Os primeiros segundos são importantes para despertar curiosidade.</p></div></article><article class="tip-card tip-two"><div class="tip-illustration">↗</div><div><span class="tip-kicker">DICA DE CONTEÚDO · 02</span><h3>Conte uma história</h3><p>Um corte com começo, meio e fim tende a ser mais fácil de acompanhar.</p></div></article><article class="tip-card tip-three"><div class="tip-illustration">Aa</div><div><span class="tip-kicker">DICA DE CONTEÚDO · 03</span><h3>Use legendas claras</h3><p>Prefira frases curtas, bom contraste e destaque com moderação.</p></div></article></div></section>
+            <section class="quick-panel"><div class="quick-icon">✳</div><h3>Uma ideia na cabeça?</h3><p>Comece um projeto e deixe o ClipAI ajudar a organizar seus melhores momentos.</p><button class="button button-outline" type="button" data-view="new-project">Criar meu primeiro corte <span>→</span></button></section>
+          </div>
+        </section>
+
+        <!-- NEW PROJECT -->
+        <section class="view" id="view-new-project" aria-labelledby="new-project-title">
+          <div class="page-heading-row"><div><div class="eyebrow">NOVO PROJETO</div><h1 id="new-project-title">Vamos criar algo incrível<span class="title-period">.</span></h1><p class="page-subtitle">Adicione seu vídeo e conte o que você quer encontrar nele.</p></div><span class="step-indicator"><b>01</b> de 03 · Configuração</span></div>
+          <form id="project-form" class="project-form">
+            <div class="form-main-column">
+              <section class="form-card"><div class="form-section-title"><span class="step-number">01</span><div><h2>Adicione seu conteúdo</h2><p>Envie um arquivo de vídeo ou informe um link compatível.</p></div></div>
+                <label class="upload-zone" id="upload-zone" for="video-file"><input type="file" id="video-file" accept="video/*" hidden><span class="upload-icon">↑</span><strong>Arraste seu vídeo até aqui</strong><span>ou <u>procure nos seus arquivos</u></span><small>MP4, MOV ou WEBM · Até 500 MB (protótipo)</small></label>
+                <div class="selected-file" id="selected-file" hidden><span class="file-icon">▣</span><div><strong id="file-name">video.mp4</strong><small id="file-size">0 MB</small></div><button type="button" class="remove-file" id="remove-file" aria-label="Remover arquivo">×</button></div>
+                <div class="divider-with-text"><span>OU USE UM LINK</span></div>
+                <label class="field-label" for="video-url">Link do vídeo ou da gravação</label><div class="url-input-wrap"><span>↗</span><input type="url" id="video-url" placeholder="https://youtube.com/watch?v=..." autocomplete="url"></div><p class="field-hint">No protótipo, o link é apenas ilustrativo. A importação real depende de integração e permissões da plataforma.</p>
+              </section>
+              <section class="form-card"><div class="form-section-title"><span class="step-number">02</span><div><h2>O que devemos procurar?</h2><p>Descreva os momentos que você gostaria de transformar em cortes.</p></div></div>
+                <label class="field-label" for="instructions">Suas instruções</label><textarea id="instructions" rows="4" placeholder="Ex.: Encontre os momentos mais engraçados, opiniões fortes e dicas práticas. Priorize trechos que tenham começo e fim...">Encontre os momentos mais interessantes e as ideias principais. Priorize trechos claros e envolventes.</textarea><div class="textarea-footer"><span>Seja específico para orientar melhor o resultado.</span><span id="char-count">0 / 500</span></div>
+                <div class="suggestion-label">IDEIAS PARA COMEÇAR</div><div class="prompt-chips"><button type="button" class="prompt-chip" data-prompt="Encontre os momentos mais engraçados e espontâneos.">😂 Momentos engraçados</button><button type="button" class="prompt-chip" data-prompt="Identifique dicas práticas e informações importantes.">💡 Dicas importantes</button><button type="button" class="prompt-chip" data-prompt="Encontre opiniões fortes, debates e frases marcantes.">🔥 Frases marcantes</button><button type="button" class="prompt-chip" data-prompt="Selecione os melhores momentos da conversa.">✦ Melhores momentos</button></div>
+              </section>
+            </div>
+            <aside class="form-side-column">
+              <section class="form-card settings-card"><div class="form-section-title"><span class="step-number">03</span><div><h2>Personalize os cortes</h2><p>Ajuste o formato para cada plataforma.</p></div></div>
+                <label class="field-label" for="clip-duration">Duração máxima</label><select id="clip-duration" class="select-field"><option value="30">Até 30 segundos</option><option value="60" selected>Até 60 segundos</option><option value="90">Até 90 segundos</option><option value="180">Até 3 minutos</option></select>
+                <span class="field-label block-label">Formato do vídeo</span><div class="format-options"><label class="format-option selected"><input type="radio" name="format" value="9:16" checked><span class="format-preview vertical-preview"></span><span><strong>Vertical</strong><small>9:16 · Reels / Shorts</small></span><i>✓</i></label><label class="format-option"><input type="radio" name="format" value="1:1"><span class="format-preview square-preview"></span><span><strong>Quadrado</strong><small>1:1 · Feed</small></span><i>✓</i></label><label class="format-option"><input type="radio" name="format" value="16:9"><span class="format-preview horizontal-preview"></span><span><strong>Horizontal</strong><small>16:9 · YouTube</small></span><i>✓</i></label></div>
+                <div class="setting-divider"></div><span class="field-label block-label">Opções adicionais</span><label class="switch-row"><span><strong>Legendas automáticas</strong><small>Exibir texto sincronizado</small></span><input type="checkbox" id="captions" checked><i class="switch"></i></label><label class="switch-row"><span><strong>Destacar palavras-chave</strong><small>Realçar termos importantes</small></span><input type="checkbox" id="highlight-words" checked><i class="switch"></i></label>
+                <div class="setting-divider"></div><label class="field-label" for="clip-quantity">Quantidade de cortes</label><select id="clip-quantity" class="select-field"><option value="3">3 cortes</option><option value="5" selected>5 cortes</option><option value="8">8 cortes</option><option value="10">10 cortes</option></select>
+              </section>
+              <div class="prototype-note"><span>✦</span><p><strong>Prévia demonstrativa</strong><br>Esta versão apresenta resultados fictícios para demonstrar a experiência. Nenhum vídeo será processado por IA.</p></div>
+              <button type="submit" class="button button-primary button-wide" id="generate-button">✦ Gerar cortes de demonstração <span>→</span></button>
+              <p class="form-terms">Ao continuar, você confirma que tem direito de utilizar o conteúdo enviado.</p>
+            </aside>
+          </form>
+        </section>
+
+        <!-- LIBRARY -->
+        <section class="view" id="view-library" aria-labelledby="library-title">
+          <div class="page-heading-row"><div><div class="eyebrow">SUA BIBLIOTECA</div><h1 id="library-title">Todos os seus cortes<span class="title-period">.</span></h1><p class="page-subtitle">Encontre, organize e acompanhe seus conteúdos.</p></div><button class="button button-primary" type="button" data-view="new-project">＋ Novo projeto</button></div>
+          <div class="library-toolbar"><div class="tab-group" role="tablist" aria-label="Filtrar cortes"><button class="library-tab active" data-filter="all" type="button" role="tab" aria-selected="true">Todos <span>24</span></button><button class="library-tab" data-filter="done" type="button" role="tab" aria-selected="false">Concluídos</button><button class="library-tab" data-filter="processing" type="button" role="tab" aria-selected="false">Em análise</button></div><label class="library-search"><span>⌕</span><input id="library-search" type="search" placeholder="Buscar na biblioteca..." aria-label="Buscar na biblioteca"></label></div>
+          <div class="library-grid" id="library-grid">
+            <article class="clip-card searchable-card" data-search="ideias conectam podcast comunicação" data-status="done"><div class="clip-preview clip-preview-one"><span class="clip-play">▶</span><span class="clip-badge">9:16</span><span class="clip-subtitle">IDEIAS QUE MUDAM<br><b>O JEITO DE PENSAR.</b></span><span class="clip-time">00:42</span></div><div class="clip-card-content"><div><span class="clip-category">PODCAST · IDEIAS QUE CONECTAM</span><h3>Uma ideia pode mudar tudo</h3></div><button class="more-button" type="button" aria-label="Mais opções">···</button><div class="clip-card-footer"><span class="status status-done"><i></i> Pronto</span><button class="download-link" type="button" data-download>↓ Baixar</button></div></div></article>
+            <article class="clip-card searchable-card" data-search="criatividade aula design" data-status="done"><div class="clip-preview clip-preview-two"><span class="clip-play">▶</span><span class="clip-badge">9:16</span><span class="clip-subtitle">A CRIATIVIDADE<br><b>PRECISA DE ESPAÇO.</b></span><span class="clip-time">01:08</span></div><div class="clip-card-content"><div><span class="clip-category">AULA · CRIATIVIDADE</span><h3>O espaço para criar</h3></div><button class="more-button" type="button" aria-label="Mais opções">···</button><div class="clip-card-footer"><span class="status status-done"><i></i> Pronto</span><button class="download-link" type="button" data-download>↓ Baixar</button></div></div></article>
+            <article class="clip-card searchable-card" data-search="tecnologia futuro live" data-status="processing"><div class="clip-preview clip-preview-three"><span class="clip-play">▶</span><span class="clip-badge">9:16</span><span class="clip-subtitle">O FUTURO<br><b>COMEÇA AGORA.</b></span><span class="clip-time">00:56</span></div><div class="clip-card-content"><div><span class="clip-category">LIVE · O FUTURO É AGORA</span><h3>O que vem pela frente?</h3></div><button class="more-button" type="button" aria-label="Mais opções">···</button><div class="clip-card-footer"><span class="status status-processing"><i></i> Em análise</span><button class="download-link muted" type="button" disabled>Indisponível</button></div></div></article>
+            <article class="clip-card searchable-card" data-search="produtividade rotina trabalho" data-status="done"><div class="clip-preview clip-preview-four"><span class="clip-play">▶</span><span class="clip-badge">1:1</span><span class="clip-subtitle">MENOS RUÍDO.<br><b>MAIS FOCO.</b></span><span class="clip-time">00:35</span></div><div class="clip-card-content"><div><span class="clip-category">ENTREVISTA · PRODUTIVIDADE</span><h3>O segredo do foco</h3></div><button class="more-button" type="button" aria-label="Mais opções">···</button><div class="clip-card-footer"><span class="status status-done"><i></i> Pronto</span><button class="download-link" type="button" data-download>↓ Baixar</button></div></div></article>
+          </div>
+          <p class="empty-state" id="empty-library" hidden>Nenhum corte encontrado. Tente outra busca ou filtro.</p>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="view" id="view-contact" aria-labelledby="contact-title">
+          <div class="page-heading-row"><div><div class="eyebrow">ESTAMOS POR AQUI</div><h1 id="contact-title">Vamos conversar<span class="title-period">.</span></h1><p class="page-subtitle">Dúvidas, ideias ou sugestões? Envie uma mensagem.</p></div></div>
+          <div class="contact-layout"><div class="contact-info-panel"><div class="contact-orb">✳</div><h2>Boas ideias começam com uma conversa.</h2><p>Conte o que você está criando ou como podemos melhorar sua experiência com o ClipAI.</p><div class="contact-detail"><span>✉</span><div><small>E-MAIL</small><strong>oi@clipai.studio</strong></div></div><div class="contact-detail"><span>◷</span><div><small>ATENDIMENTO</small><strong>Segunda a sexta, 9h às 18h</strong></div></div><div class="contact-pattern" aria-hidden="true">✳　✦　✳</div></div>
+            <form class="contact-form form-card" id="contact-form"><div class="form-section-title"><div><h2>Envie sua mensagem</h2><p>Preencha os campos abaixo.</p></div></div><div class="form-two-col"><label><span class="field-label">Nome</span><input class="text-field" type="text" name="name" placeholder="Como podemos te chamar?" required></label><label><span class="field-label">E-mail</span><input class="text-field" type="email" name="email" placeholder="voce@email.com" required></label></div><label><span class="field-label">Assunto</span><select class="select-field" name="subject"><option>Dúvida sobre a plataforma</option><option>Ideia ou sugestão</option><option>Relatar um problema</option><option>Outro assunto</option></select></label><label><span class="field-label">Mensagem</span><textarea name="message" rows="5" placeholder="Escreva sua mensagem..." required></textarea></label><button class="button button-primary" type="submit">Enviar mensagem <span>→</span></button><p class="form-terms">Formulário demonstrativo: nenhuma mensagem será enviada a um servidor.</p></form></div>
+        </section>
+
+        <footer class="site-footer"><a class="footer-brand" href="#inicio" data-view-link="dashboard"><img src="assets/logo.svg" alt="" width="25" height="25"> clip<span>ai</span></a><span>© 2026 ClipAI Studio. Projeto acadêmico demonstrativo.</span><div class="footer-links"><a href="#contato" data-view-link="contact">Contato</a><a href="login.html">Entrar</a><button type="button" id="footer-accessibility">Acessibilidade</button></div></footer>
+      </main>
+    </div>
+  </div>
+
+  <!-- ACCESSIBILITY PANEL -->
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="accessibility-drawer" id="accessibility-drawer" aria-labelledby="accessibility-title" aria-hidden="true">
+    <div class="drawer-header"><div><span class="eyebrow">PREFERÊNCIAS DE LEITURA</span><h2 id="accessibility-title">Acessibilidade</h2></div><button class="icon-button" id="close-accessibility" type="button" aria-label="Fechar painel">×</button></div>
+    <p class="drawer-intro">Personalize a interface para deixá-la mais confortável para você.</p>
+    <div class="accessibility-control"><div><strong>Tamanho do texto</strong><small>Ajuste a leitura do conteúdo</small></div><div class="font-buttons"><button type="button" data-font="decrease" aria-label="Diminuir fonte">A−</button><button type="button" data-font="reset" aria-label="Restaurar fonte">A</button><button type="button" data-font="increase" aria-label="Aumentar fonte">A+</button></div></div>
+    <div class="accessibility-control"><div><strong>Contraste reforçado</strong><small>Mais contraste entre texto e fundo</small></div><label class="switch-control"><input type="checkbox" id="high-contrast"><i></i></label></div>
+    <div class="accessibility-control"><div><strong>Reduzir animações</strong><small>Diminuir movimentos decorativos</small></div><label class="switch-control"><input type="checkbox" id="reduce-motion"><i></i></label></div>
+    <div class="drawer-footnote">O ClipAI busca seguir boas práticas de acessibilidade inspiradas nas diretrizes WCAG.</div>
+  </aside>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
