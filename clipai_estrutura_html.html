@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLIPAi — Cortes de Vídeos do YouTube</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Cabeçalho, Acessibilidade (Modo Claro/Escuro) e Login -->
+  <header class="header" role="banner">
+    <div class="container header-flex">
+      <a href="#gerador" class="brand">CLIP<span>Ai</span></a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#gerador">Cortar</a>
+        <a href="#carrossel">Carrossel</a>
+        <a href="#pesquisa">Abas e Pesquisa</a>
+        <a href="#sobre">Explicativo</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="a11y-bar" role="group" aria-label="Acessibilidade e Conta">
+        <button type="button" id="btnTheme" class="btn-chip" aria-pressed="false">Modo Claro</button>
+        <button type="button" id="btnOpenLogin" class="btn-primary">Entrar</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Gerador Simples por Link do YouTube -->
+    <section id="gerador" class="hero">
+      <div class="container">
+        <h1>Corte simples de vídeos em <span>segundos</span></h1>
+        <p class="subtitle">
+          Cole um link do YouTube e defina o início e o fim em segundos para cortar o trecho.
+        </p>
+
+        <form id="clipGeneratorForm" class="generator-box">
+          <input
+            type="text"
+            id="videoLinkInput"
+            required
+            placeholder="Cole o link do vídeo do YouTube"
+            aria-label="Link do vídeo do YouTube"
+          />
+          <input type="number" id="startSecInput" min="0" value="0" aria-label="Início em segundos" />
+          <input type="number" id="endSecInput" min="1" value="30" aria-label="Fim em segundos" />
+          <button type="submit" class="btn-primary">Cortar Vídeo</button>
+        </form>
+
+        <div id="generatorFeedback" class="feedback" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Carrossel com as 2 Imagens Enviadas -->
+    <section id="carrossel" class="section">
+      <div class="container">
+        <h2>Formatos e Aplicativos de Vídeos Curtos</h2>
+        <p class="section-desc">Cortes simples voltados para YouTube Shorts e aplicativos de vídeos curtos.</p>
+
+        <div class="carousel" aria-roledescription="carousel">
+          <button type="button" id="prevSlide" class="carousel-btn" aria-label="Slide anterior">&#10094;</button>
+          <div class="slide-card">
+            <div class="slide-media">
+              <img id="carouselImg" src="youtubeshortslogo.jpg" alt="YouTube Shorts" />
+            </div>
+            <div class="slide-caption">
+              <h3 id="carouselTitle"></h3>
+              <p id="carouselDesc"></p>
+            </div>
+          </div>
+          <button type="button" id="nextSlide" class="carousel-btn" aria-label="Próximo slide">&#10095;</button>
+        </div>
+        <div id="carouselDots" class="carousel-dots"></div>
+      </div>
+    </section>
+
+    <!-- Abas e Pesquisa -->
+    <section id="pesquisa" class="section">
+      <div class="container">
+        <h2>Abas e Pesquisa</h2>
+        <p class="section-desc">Escolha uma aba ou pesquise por palavra-chave para filtrar os cartões.</p>
+
+        <div class="search-controls">
+          <div class="tabs" role="tablist" aria-label="Abas de pesquisa">
+            <button type="button" class="tab-btn active" data-tab="todos">Todos</button>
+            <button type="button" class="tab-btn" data-tab="curto">Curto</button>
+            <button type="button" class="tab-btn" data-tab="padrao">Padrão</button>
+          </div>
+          <input
+            type="search"
+            id="searchInput"
+            class="search-input"
+            placeholder="Pesquisar cartões..."
+            aria-label="Pesquisar cartões"
+          />
+        </div>
+
+        <div id="cardsGrid" class="cards-grid"></div>
+      </div>
+    </section>
+
+    <!-- Cartões Explicativos -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2>Cartões Explicativos</h2>
+        <div class="info-grid">
+          <article class="card-box">
+            <h3>1. Link do Vídeo</h3>
+            <p>Cole o link do vídeo do YouTube de forma simples e direta.</p>
+          </article>
+          <article class="card-box">
+            <h3>2. Corte em Segundos</h3>
+            <p>Defina apenas o segundo inicial e final para recortar o intervalo desejado.</p>
+          </article>
+          <article class="card-box">
+            <h3>3. Modo Claro / Escuro</h3>
+            <p>Alterne o tema diretamente no topo mantendo alto contraste e leitura confortável.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Contato com Formulário -->
+    <section id="contato" class="section">
+      <div class="container">
+        <h2>Contato</h2>
+        <p class="section-desc">Envie uma mensagem sobre o projeto CLIPAi.</p>
+
+        <form id="contactForm" class="contact-form">
+          <div class="form-row">
+            <label>
+              Nome
+              <input type="text" id="contactName" required placeholder="Seu nome" />
+            </label>
+            <label>
+              E-mail
+              <input type="email" id="contactEmail" required placeholder="seuemail@exemplo.com" />
+            </label>
+          </div>
+          <label>
+            Mensagem
+            <textarea id="contactMessage" rows="4" required placeholder="Escreva sua mensagem..."></textarea>
+          </label>
+          <button type="submit" class="btn-primary">Enviar Mensagem</button>
+          <div id="contactStatus" class="feedback" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <div><strong>CLIPAi</strong> — Projeto de Desenvolvimento de Interfaces.</div>
+      <div class="footer-links">
+        <span>WCAG 2.1 AA</span>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Login -->
+  <div id="loginModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="loginTitle">Entrar no CLIPAi</h2>
+        <button type="button" id="closeLoginModal" class="btn-chip" aria-label="Fechar janela">&times;</button>
+      </div>
+      <form id="loginForm" class="modal-form">
+        <label>
+          E-mail ou Usuário
+          <input type="text" id="loginUser" required placeholder="usuario@exemplo.com" />
+        </label>
+        <label>
+          Senha
+          <input type="password" id="loginPass" required placeholder="••••••••" />
+        </label>
+        <button type="submit" class="btn-primary">Entrar</button>
+        <div id="loginStatus" class="feedback" role="status"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
