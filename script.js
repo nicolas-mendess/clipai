@@ -3,14 +3,12 @@ const slidesData = [
   {
     title: "YouTube Shorts",
     desc: "Formato de vídeo curto voltado para cortes rápidos e diretos.",
-    img: "youtubeshortslogo.jpg",
-    fallback: "youtubeshortslogo (1).jpg"
+    img: "youtubeshortslogo.jpg"
   },
   {
     title: "Aplicativos de Vídeos Curtos",
     desc: "Plataformas mobile que utilizam vídeos curtos no dia a dia.",
-    img: "appsvideoscurtos.jpg",
-    fallback: "appsvideoscurtos (1).jpg"
+    img: "appsvideoscurtos.jpg"
   }
 ];
 
@@ -61,13 +59,6 @@ const carouselImg = document.getElementById("carouselImg");
 const carouselTitle = document.getElementById("carouselTitle");
 const carouselDesc = document.getElementById("carouselDesc");
 const carouselDots = document.getElementById("carouselDots");
-
-carouselImg.addEventListener("error", () => {
-  const fallback = slidesData[currentSlide]?.fallback;
-  if (fallback && carouselImg.src !== fallback) {
-    carouselImg.src = fallback;
-  }
-});
 
 function renderCarousel() {
   const slide = slidesData[currentSlide];
